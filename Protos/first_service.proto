@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package first_service;
+
+import "Protos/models.proto";
+
+option csharp_namespace = "FirstService";
+
+service ElementService {
+  rpc 
+}

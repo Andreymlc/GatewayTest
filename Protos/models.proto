@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package first_service;
+
+option csharp_namespace = "FirstService";
+
+message Element {
+  string Id = 1;
+  string Name = 2;
+  string Duration = 3;
+}
