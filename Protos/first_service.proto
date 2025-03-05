@@ -7,5 +7,17 @@ import "Protos/models.proto";
 option csharp_namespace = "FirstService";
 
 service ElementService {
-  rpc 
+  rpc GetElements(ElementsRequest) returns (ElementsResponse);
+}
+
+message ElementsRequest {
+  int32 first = 1;
+  string after = 2;
+  string before = 3;
+}
+
+message ElementsResponse {
+  repeated Element elements = 1;
+  string prev_cursor = 2;
+  string next_cursor = 3;
 }
