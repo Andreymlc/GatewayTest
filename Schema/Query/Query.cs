@@ -5,6 +5,9 @@ namespace GatewayTest.Schema.Query;
 public sealed class Query(IElementService elementService)
 {
     private readonly List<Element> _elements = Data.GenerateData(500000);
+    
+    [UsePaging]
+    public IEnumerable<Element> GetElements() => _elements;
 
     public async Task<Conection<Element>> GetMyPagingElements(string? after, string? before, int? first, int? last)
     {
